@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #0e100d;
+  --text-color: #f4f4ee;
+  --card-bg: #171a15;
+  --card-hover: #1f241d;
+  --border-color: #242a20;
+  --accent-color: #c9f250;
+  --muted-color: #9a9e93;
+}
+
+html.light {
+  --bg-color: #f6f5f0;
+  --text-color: #1d201a;
+  --card-bg: #ffffff;
+  --card-hover: #f0efe9;
+  --border-color: #e2e0d5;
+  --accent-color: #c9f250;
+  --muted-color: #666a5f;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333a2e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9f250;
+}
+
+/* Background Grids & Patterns */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(201, 242, 80, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 242, 80, 0.04) 1px, transparent 1px);
+}
+
+.light .bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(201, 242, 80, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.light .bg-dot-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle glow radial gradient */
+.radial-glow {
+  background: radial-gradient(circle 500px at 50% 10%, rgba(201, 242, 80, 0.07), transparent 70%);
+}
+
+/* Code card aesthetic */
+.terminal-window {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(201, 242, 80, 0.15);
+}
+
+/* Smooth motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
