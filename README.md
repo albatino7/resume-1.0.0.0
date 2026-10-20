@@ -1,93 +1,96 @@
-# Atul Demond — Premium Animated MERN Stack Developer Portfolio
+# Atul Demond - 90s Cyber Portfolio SPA 🕹️💾
 
-A production-quality personal portfolio and resume platform engineered for **Atul Demond**, Senior MERN Stack Developer & UI Engineer.
-
-Built with **React 19**, **Vite**, **Tailwind CSS**, **Redux Toolkit**, **TanStack Query**, **GSAP & ScrollTrigger**, **Motion for React (Framer Motion)**, **Lenis**, and **Sonner**.
+A feature-rich, high-performance **React Single Page Application (SPA)** developer portfolio crafted with an authentic **1990s Windows 95 / Web 1.0 aesthetic**, showcasing the expertise, projects, and credentials of **Atul Demond (MERN Stack Developer)**.
 
 ---
 
-## ⚡ Tech Stack & Architecture
+## 🏛️ Feature-Based Architecture
 
-| Layer | Technology | Responsibility |
-|---|---|---|
-| **Framework & Build** | React 19 + Vite | Fast HMR, optimized tree-shaking, ES modules |
-| **Routing** | React Router (Declarative `createBrowserRouter`) | Dynamic project case studies (`/projects/:projectId`), resume page (`/resume`), catalog (`/projects`) |
-| **Styling & Tokens** | Tailwind CSS + Custom CSS Variables | Editorial dark-first identity with `#c9f250` neon lime brand accent |
-| **Client State** | Redux Toolkit | Theme mode, mobile drawer state, active scroll spy, contact async thunk |
-| **Async Thunk** | `createAsyncThunk` | Contact form submission workflow with client validation & pending/fulfilled/rejected lifecycles |
-| **Server State & Cache** | TanStack Query (`@tanstack/react-query`) | Service layer caching, `useInfiniteQuery` pagination with intersection observer |
-| **Motion & Scroll** | GSAP 3 + ScrollTrigger + Lenis | Staggered entrance sequences, physics-based smooth scrolling, responsive ticker sync |
-| **Micro-Interactions** | Motion for React (Framer Motion) | Sun/Moon theme toggle morphing, spring mobile navigation drawer, interactive button states |
-| **Feedback** | Sonner | Themed toast notifications for copy actions, form status, and PDF downloads |
-| **PDF Engine** | `pdf-lib` | Script to generate real downloadable ATS-friendly PDF resume asset |
-
----
-
-## 🚀 Key Features
-
-1. **Editorial Hero Section**:
-   - High-impact typography with neon lime highlights.
-   - Interactive terminal window showcasing Node.js Express server initialization, Redux cart slice, and bash runtime status.
-   - Verified credentials, live social links, and real availability badge.
-
-2. **Verified Background & Timeline**:
-   - Education: MCA (AISECT University Jharkhand), BCA (VKSU 1st Div), Intermediate (BSEB 1st Div PCM), 10th (CBSE 1st Div).
-   - Commercial Platforms: Multi-year domain infrastructure work (2018–2023) across `gamingconsole.com`, `allindiaexamresult.com`, `healthynord.com`, and `jaideoclasses.in`.
-   - Core philosophy: State integrity, fluid animations, secure APIs, and Generative AI exploration.
-
-3. **Curated Project Showcase**:
-   - **PulseCart**: Full-Stack MERN E-Commerce platform with Redux Toolkit cart sync and JWT authentication.
-   - **LinkPulse**: High-performance URL shortener & click analytics with telemetry heatmaps.
-   - **EchoSphere**: Real-time collaborative workspace utilizing WebSockets and WebRTC P2P media.
-   - **NeuroQuery**: AI Semantic Search exploring RAG and vector embeddings.
-   - Dynamic Case Studies (`/projects/:projectId`) with problem/solution, architecture blueprints, metrics, and source links.
-
-4. **Infinite Scroll Project Catalog**:
-   - Powered by TanStack Query `useInfiniteQuery`.
-   - IntersectionObserver triggers auto-fetch of next pages.
-   - Filter by category and instant keyword search.
-   - Skeleton loading cards and clean end-of-catalog status.
-
-5. **Redux-Managed Contact Workflow**:
-   - Handled via `createAsyncThunk` (`submitContactForm`).
-   - Strict client-side validation and simulated network latency with zero false delivery claims.
-   - One-click copy email (`atuldemond@gmail.com`) and phone (`8651029001`) with toast confirmations.
-
-6. **Dedicated Resume & Real PDF Asset**:
-   - Dedicated interactive route (`/resume`) with ATS-ready print layout (`window.print()`).
-   - Download button linked to real generated PDF asset: `/resume-atul-demond.pdf`.
-
----
-
-## 🛠️ Development & Build Commands
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Run Oxlint linter
-npm run lint
-
-# Compile production build
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Re-generate PDF resume asset
-node scripts/generate-pdf.js
+```text
+src/
+├── app/
+│   └── App.jsx               # Application root, window state orchestrator & lazy loading
+│
+├── features/
+│   ├── bio/                  # Professional summary, contact coordinates, hobbies
+│   │   ├── components/AboutWindow.jsx
+│   │   └── index.js
+│   ├── projects/             # Fullstack projects (Ecommerce, URL Shortener, Video Chat, Domains)
+│   │   ├── components/ProjectsWindow.jsx
+│   │   └── index.js
+│   ├── skills/               # Technical skills with 90s block gauges
+│   │   ├── components/SkillsWindow.jsx
+│   │   └── index.js
+│   ├── education/            # Academic transcripts & degrees (MCA, BCA, Intermediate, 10th)
+│   │   ├── components/EducationWindow.jsx
+│   │   └── index.js
+│   ├── contact/              # 56k dial-up message gateway & direct contact cards
+│   │   ├── components/ContactWindow.jsx
+│   │   └── index.js
+│   ├── terminal/             # Interactive MS-DOS 6.22 command prompt with CLI commands
+│   │   ├── components/TerminalWindow.jsx
+│   │   └── index.js
+│   ├── resume/               # Formatted printable CV sheet & text exporter
+│   │   ├── components/ResumeWindow.jsx
+│   │   └── index.js
+│   ├── games/                # Playable retro 90s Windows Minesweeper mini-game
+│   │   └── minesweeper/
+│   │       ├── components/MinesweeperWindow.jsx
+│   │       └── index.js
+│   ├── media/                # 90s Win-Amp audio player with spectrum visualizer & synth
+│   │   └── jukebox/
+│   │       ├── components/RetroJukeboxWindow.jsx
+│   │       └── index.js
+│   ├── geocities/            # 1996 GeoCities continuous scroll Web 1.0 mode
+│   │   ├── components/GeocitiesMode.jsx
+│   │   └── index.js
+│   └── desktop/              # Shell chrome: DesktopIcons, RetroBanner, Taskbar, StartMenu
+│       ├── components/DesktopIcons.jsx
+│       ├── components/RetroBanner.jsx
+│       ├── components/Taskbar.jsx
+│       ├── components/StartMenu.jsx
+│       ├── components/ShutdownModal.jsx
+│       └── index.js
+│
+├── shared/
+│   ├── components/
+│   │   ├── ui/               # Reusable Window frame & SocialIcons
+│   │   │   ├── Window.jsx
+│   │   │   └── SocialIcons.jsx
+│   │   └── loaders/          # 90s Reusable Loaders (PageLoader, RouteLoader, AppLoader, etc.)
+│   │       ├── AppLoader.jsx
+│   │       ├── RouteLoader.jsx
+│   │       ├── PageLoader.jsx
+│   │       ├── SkeletonLoader.jsx
+│   │       ├── ButtonLoader.jsx
+│   │       └── index.js
+│   ├── constants/            # Portfolio dataset & records
+│   │   └── portfolioData.js
+│   └── utils/
+│       ├── confetti.js       # Dynamic on-demand import of celebration confetti
+│       └── soundEffects.js   # Web Audio API retro sound synthesis
+│
+├── styles/
+│   └── index.css             # Tailwind v4, 90s bevels, custom scanlines & animations
+└── main.jsx                  # Application entry point
 ```
 
 ---
 
-## 👤 Developer Contact
+## ⚡ Performance & Optimization Highlights
 
-- **Name**: Atul Demond
-- **Email**: [atuldemond@gmail.com](mailto:atuldemond@gmail.com)
-- **Phone**: [+91 8651029001](tel:8651029001)
-- **LinkedIn**: [linkedin.com/in/atuldemond](https://www.linkedin.com/in/atuldemond/)
-- **GitHub**: [github.com/albatino7](https://github.com/albatino7)
-- **Location**: Delhi, India
+1. **Route & Feature-Level Lazy Loading (`React.lazy` + `Suspense`)**:
+   - Initial entry chunk reduced from **386 kB** to **45 kB**!
+   - Every window (Bio, Projects, Skills, Education, Contact, Terminal, Resume, Minesweeper, Jukebox, GeoCities) is loaded strictly on-demand as a separate bundle.
+   - `canvas-confetti` is dynamically imported only when celebrations are triggered.
+2. **Window Sizing & Heading Menu Fix**:
+   - Windows (whether in normal or maximized full-screen mode) stay neatly positioned directly below the top heading menu (`top-[54px] sm:top-[64px]`) down to the taskbar (`bottom-10`), ensuring the top header/ticker is never blocked or obscured.
+   - Added smooth bottom-to-up entrance slide animation (`animate-window-open`).
+3. **Reusable 90s Loading System**:
+   - `PageLoader`: Windows 95 file dialog with animated progress gauge blocks.
+   - `RouteLoader`: 90s Netscape globe loading screen.
+   - `SkeletonLoader`: Sunken gray placeholders.
+   - `ButtonLoader`: Non-blocking button progress indicator.
+4. **Code Quality**:
+   - 0 linter errors or warnings on `oxlint`.
+   - Production bundle compiles in < 700ms.

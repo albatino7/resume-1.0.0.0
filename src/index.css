@@ -1,98 +1,250 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* 90s Retro Theme Variables - Solid One-Color Palette */
 :root {
-  --bg-color: #0e100d;
-  --text-color: #f4f4ee;
-  --card-bg: #171a15;
-  --card-hover: #1f241d;
-  --border-color: #242a20;
-  --accent-color: #c9f250;
-  --muted-color: #9a9e93;
+  --win-bg: #c0c0c0;
+  --win-border-light: #ffffff;
+  --win-border-dark: #404040;
+  --win-border-mid: #808080;
+  --win-titlebar-bg: #000080;
+  --desktop-bg: #008080;
+  --crt-scanlines: rgba(0, 0, 0, 0.15);
 }
 
-html.light {
-  --bg-color: #f6f5f0;
-  --text-color: #1d201a;
-  --card-bg: #ffffff;
-  --card-hover: #f0efe9;
-  --border-color: #e2e0d5;
-  --accent-color: #c9f250;
-  --muted-color: #666a5f;
+[data-theme="vaporwave"] {
+  --win-bg: #c0c0c0;
+  --win-border-light: #ffffff;
+  --win-border-dark: #404040;
+  --win-border-mid: #808080;
+  --win-titlebar-bg: #5b21b6; /* One solid rich vaporwave violet */
+  --desktop-bg: #1e0836;     /* One solid dark vaporwave purple */
 }
 
+[data-theme="win95"] {
+  --win-bg: #c0c0c0;
+  --win-border-light: #ffffff;
+  --win-border-dark: #404040;
+  --win-border-mid: #808080;
+  --win-titlebar-bg: #000080; /* One solid navy blue */
+  --desktop-bg: #008080;     /* One solid retro teal */
+}
+
+[data-theme="matrix"] {
+  --win-bg: #c0c0c0;
+  --win-border-light: #ffffff;
+  --win-border-dark: #404040;
+  --win-border-mid: #808080;
+  --win-titlebar-bg: #005a18; /* One solid terminal green */
+  --desktop-bg: #051405;     /* One solid deep dark matrix green */
+}
+
+[data-theme="hotdog"] {
+  --win-bg: #ffff00;
+  --win-border-light: #ffffff;
+  --win-border-dark: #000000;
+  --win-border-mid: #cc0000;
+  --win-titlebar-bg: #cc0000; /* One solid red */
+  --desktop-bg: #8b0000;     /* One solid dark red */
+}
+
+/* Base Font Setup - Flat Solid Background */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DotGothic16", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--desktop-bg);
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-/* Custom Scrollbar */
+/* 90s Typography */
+.font-pixel {
+  font-family: "Press Start 2P", monospace;
+}
+.font-vt323 {
+  font-family: "VT323", monospace;
+}
+.font-mono-90s {
+  font-family: "Share Tech Mono", "Courier New", monospace;
+}
+.font-sys {
+  font-family: "Tahoma", "Segoe UI", Arial, sans-serif;
+}
+
+/* Authentic Windows 95 Bevel Effects */
+.win95-raised {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px #808080;
+}
+
+.win95-sunken {
+  background-color: #ffffff;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #000000, inset -1px -1px 0px #dfdfdf;
+}
+
+.win95-btn {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px #808080;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: none;
+}
+
+.win95-btn:active, .win95-btn.active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #000000;
+  padding-top: calc(var(--padding-y, 4px) + 1px);
+  padding-bottom: calc(var(--padding-y, 4px) - 1px);
+}
+
+/* One Solid Color Titlebars */
+.win95-titlebar {
+  background-color: var(--win-titlebar-bg, #000080);
+  color: #ffffff;
+}
+
+.win95-titlebar.inactive {
+  background-color: #808080;
+  color: #d4d4d4;
+}
+
+/* 90s Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-color);
+  width: 16px;
+  height: 16px;
+  background-color: #dfdfdf;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333a2e;
-  border-radius: 4px;
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #c9f250;
+::-webkit-scrollbar-button {
+  width: 16px;
+  height: 16px;
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  display: block;
 }
 
-/* Background Grids & Patterns */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(201, 242, 80, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(201, 242, 80, 0.04) 1px, transparent 1px);
+/* CRT Scanline Overlay */
+.crt-effect::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.04));
+  z-index: 99999;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.8;
 }
 
-.light .bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+/* 90s Under Construction Animated Hazard Stripes */
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #facc15,
+    #facc15 12px,
+    #000000 12px,
+    #000000 24px
+  );
 }
 
-.bg-dot-pattern {
-  background-image: radial-gradient(rgba(201, 242, 80, 0.12) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Blinking Animation */
+@keyframes retro-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
-.light .bg-dot-pattern {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 24px 24px;
+.blink {
+  animation: retro-blink 1s infinite;
 }
 
-/* Subtle glow radial gradient */
-.radial-glow {
-  background: radial-gradient(circle 500px at 50% 10%, rgba(201, 242, 80, 0.07), transparent 70%);
-}
-
-/* Code card aesthetic */
-.terminal-window {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(201, 242, 80, 0.15);
-}
-
-/* Smooth motion respect */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
+/* Window Smooth Slide-Up Entrance Animation (from down to up heading menu) */
+@keyframes windowOpen {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-window-open {
+  animation: windowOpen 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Retro Marquee Animation */
+@keyframes retro-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-retro-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: retro-marquee 25s linear infinite;
+}
+
+.animate-retro-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom react-toastify 90s styling */
+.Toastify__toast {
+  font-family: "Tahoma", sans-serif !important;
+  font-size: 13px !important;
+  border-radius: 0px !important;
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border-top: 2px solid #ffffff !important;
+  border-left: 2px solid #ffffff !important;
+  border-right: 2px solid #404040 !important;
+  border-bottom: 2px solid #404040 !important;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5) !important;
+}
+
+.Toastify__toast--success {
+  border-left: 4px solid #008000 !important;
+}
+.Toastify__toast--error {
+  border-left: 4px solid #ff0000 !important;
+}
+.Toastify__toast--info {
+  border-left: 4px solid #000080 !important;
+}
+.Toastify__progress-bar {
+  background: #000080 !important;
 }
