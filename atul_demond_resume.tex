@@ -1,0 +1,179 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+% -------------------- PAGE SETUP & MARGINS --------------------
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins optimized for 1-page fit (matching Vishal's template)
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% -------------------- SECTION FORMATTING --------------------
+\titleformat{\section}{
+  \vspace{-5pt}\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Ensure PDF is machine readable / ATS friendly
+\pdfgentounicode=1
+
+% -------------------- CUSTOM COMMANDS --------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1.5pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1.5pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+% -------------------------------------------------------------
+%                       RESUME DOCUMENT
+% -------------------------------------------------------------
+\begin{document}
+
+% ---------- HEADER ----------
+\begin{center}
+    {\Huge \textbf{ATUL DEMOND}} \\ \vspace{4pt}
+    \small
+    \faPhone* \ +91 8651029001 \ $|$ \
+    \faEnvelope \ \href{mailto:atuldemond@gmail.com}{atuldemond@gmail.com} \ $|$ \
+    \faGlobe \ \href{https://resume-1-0-0-0.vercel.app}{resume-1-0-0-0.vercel.app} \ $|$ \
+    \faGithub \ \href{https://github.com/atuldemond}{github.com/atuldemond} \ $|$ \
+    \faLinkedin \ \href{https://linkedin.com/in/atuldemond}{linkedin.com/in/atuldemond}
+\end{center}
+\vspace{-6pt}
+
+% ---------- PROFILE SUMMARY ----------
+\section{PROFILE SUMMARY}
+\small{Results-driven \textbf{MERN Stack Developer} and MCA graduate with strong fundamentals in full-stack web development, responsive UI engineering, and scalable \textbf{RESTful API} design. Proficient in \textbf{React.js}, \textbf{Redux Toolkit}, \textbf{Node.js}, \textbf{Express.js}, and \textbf{MongoDB}. Demonstrated expertise in building production-ready web applications with \textbf{JWT authentication}, \textbf{Google OAuth 2.0}, \textbf{Razorpay payment gateway} integration, and real-time communication using \textbf{WebSockets}. Experienced in web performance optimization, version control with \textbf{Git}, and deploying cloud applications on \textbf{Render} and \textbf{Vercel}.}
+
+% ---------- EDUCATION ----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {AISECT University}{Jharkhand, India}
+    {Master of Computer Applications (MCA)}{2022 -- 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{Relevant Coursework:} Full-Stack Web Development, Database Management Systems (DBMS), Data Structures \& Algorithms, Object-Oriented Programming, Computer Networks}
+      \resumeItem{Graduated with Distinction; specialized in modern JavaScript application design and scalable backend systems.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Veer Kunwar Singh University (VKSU)}{Bihar, India}
+    {Bachelor of Computer Applications (BCA)}{2019 -- 2022}
+    \resumeItemListStart
+      \resumeItem{Graduated with 1st Division, establishing core foundations in C/C++, Java, DBMS, and Web Technologies.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% ---------- SKILLS ----------
+\section{SKILLS}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Technical Skills}{: JavaScript (ES6+), TypeScript (Basics), React.js, Redux Toolkit, Node.js, Express.js, MongoDB, Mongoose ODM, RESTful APIs, WebSockets (Socket.io), WebRTC, HTML5, CSS3, Tailwind CSS, Bootstrap, SQL (Basics)} \\
+    \textbf{Tools \& Platforms}{: Git, GitHub, Postman, Vite, cPanel, Vercel, Render, Netlify, Razorpay API, Jest, Linux, Windows, VS Code} \\
+    \textbf{Auth \& Security}{: JSON Web Tokens (JWT), Google OAuth 2.0, Passport.js, Bcrypt, Role-Based Access Control (RBAC), Server-Side Validation (Joi)}
+  }}
+\end{itemize}
+
+% ---------- EXPERIENCE ----------
+\section{EXPERIENCE}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Freelance Web Developer \& System Administrator \textnormal{--- Remote}}{2020 -- 2024}
+    {Client Domains: gamingconsole.com, allindiaexamresult.com, healthynord.com, jaideoclasses.in}{}
+    \resumeItemListStart
+      \resumeItem{Built, configured, and maintained responsive websites and blogs for 4+ production domains, serving over \textbf{50,000+} monthly visitors.}
+      \resumeItem{Executed zero-downtime server migrations across hosting providers (\textbf{cPanel}, \textbf{VPS}, DNS reconfiguration, and \textbf{SSL certification} setup).}
+      \resumeItem{Improved \textbf{Core Web Vitals} and PageSpeed scores by \textbf{40\%} through asset minification, \textbf{WebP image compression}, and server-level caching.}
+      \resumeItem{Diagnosed and resolved cross-browser compatibility, database query bottlenecks, and security vulnerabilities.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% ---------- PROJECTS ----------
+\section{PROJECTS}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Snitch -- Full-Stack MERN E-Commerce Platform} $|$ \emph{React.js, Redux Toolkit, Node.js, Express, MongoDB, Tailwind}}{2024}
+    \resumeItemListStart
+      \resumeItem{Architected a responsive, production-ready e-commerce platform featuring dynamic product filtering, persistent shopping cart state, and order tracking.}
+      \resumeItem{Engineered secure backend \textbf{RESTful APIs} with \textbf{Express.js} and \textbf{MongoDB/Mongoose}, handling \textbf{15+ CRUD endpoints} for catalog, user, and order models.}
+      \resumeItem{Integrated \textbf{Razorpay Payment Gateway} with end-to-end webhook signature verification, ensuring \textbf{100\% secure payment transactions}.}
+      \resumeItem{Implemented robust authentication using \textbf{JWT} and \textbf{HTTP-only cookies}, paired with \textbf{Role-Based Access Control (RBAC)} for customer and admin portals.}
+      \resumeItem{Optimized frontend performance with \textbf{React lazy loading}, memoization, and \textbf{Redux Toolkit} slices, reducing initial page load time by \textbf{35\%}.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Full-Stack URL Shortener \& Analytics Web App} $|$ \emph{React.js, Node.js, Express.js, MongoDB, Tailwind CSS, Chart.js}}{2024}
+    \resumeItemListStart
+      \resumeItem{Developed a scalable URL shortening service capable of generating unique, collision-resistant hash identifiers using \textbf{NanoID}.}
+      \resumeItem{Designed an intuitive analytics dashboard visualizing real-time click counts, geographic referrers, device metrics, and timestamps using \textbf{Chart.js}.}
+      \resumeItem{Built rate-limiting middleware (\textbf{express-rate-limit}) and custom \textbf{TTL expiration} to prevent DDoS abuse and clean up stale database records.}
+      \resumeItem{Applied server-side input validation and error handling using \textbf{Joi/Validator}, improving API resilience and reducing invalid requests by \textbf{95\%}.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Real-Time Collaboration \& WebSocket Chat Engine} $|$ \emph{React.js, Node.js, Express.js, Socket.io, WebRTC, Tailwind CSS}}{2023}
+    \resumeItemListStart
+      \resumeItem{Built a low-latency real-time chat application supporting one-to-one messaging, room broadcasting, and live user typing indicators via \textbf{Socket.io}.}
+      \resumeItem{Implemented \textbf{WebRTC peer connections} for direct browser-to-browser peer communication and audio/video stream exchange.}
+      \resumeItem{Designed clean message history storage in \textbf{MongoDB} with indexed query lookups, optimizing chat history retrieval \textbf{under 50ms}.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% ---------- ACHIEVEMENTS ----------
+\section{ACHIEVEMENTS}
+\resumeItemListStart
+  \resumeItem{Architected, deployed, and administered \textbf{4+ production client web applications}, serving over \textbf{50,000+ monthly active visitors} with 99.9\% uptime.}
+  \resumeItem{Graduated with \textbf{Distinction} in Master of Computer Applications (MCA) and \textbf{1st Division} in Bachelor of Computer Applications (BCA).}
+  \resumeItem{Engineered and published end-to-end full-stack MERN projects on GitHub featuring modern CI/CD deployments on \textbf{Vercel} and \textbf{Render}.}
+\resumeItemListEnd
+
+\end{document}
